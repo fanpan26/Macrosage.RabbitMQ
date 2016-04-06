@@ -10,6 +10,8 @@ namespace Macrosage.RabbitMQ.Server.Customer
 {
     public interface IMessageCustomer
     {
+
+        uint messageCount(string queueName);
         /// <summary>
         /// 消费消息
         /// </summary>

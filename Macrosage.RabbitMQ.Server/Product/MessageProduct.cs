@@ -24,12 +24,11 @@ namespace Macrosage.RabbitMQ.Server.Product
                 using (var model = connection.CreateModel())
                 {
                     //消息持久化，防止丢失
-                    bool durable = true;
-                    model.QueueDeclare(queueName, durable, false, false, null);
+                    model.QueueDeclare(queueName, RabbitMQConfig.IsDurable, false, false, null);
 
                     //
                     var properties = model.CreateBasicProperties();
-                    properties.SetPersistent(true);
+                    properties.SetPersistent(RabbitMQConfig.IsDurable);
                     properties.DeliveryMode = 2;
 
                     //消息转换为二进制

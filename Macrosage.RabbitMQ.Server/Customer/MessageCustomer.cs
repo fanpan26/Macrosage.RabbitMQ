@@ -1,4 +1,5 @@
-﻿using RabbitMQ.Client;
+﻿using Macrosage.RabbitMQ.Server.Config;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace Macrosage.RabbitMQ.Server.Customer
 {
     public class MessageCustomer : IMessageCustomer
     {
+        #region 消息处理成功之后 调用ack方法
         /// <summary>
         /// 消息处理成功之后调用
         /// </summary>
@@ -19,7 +21,9 @@ namespace Macrosage.RabbitMQ.Server.Customer
         {
              model.BasicAck(args.DeliveryTag, false);
         }
+        #endregion
 
+        #region 消费消息
         /// <summary>
         /// 消费信息
         /// </summary>
@@ -32,9 +36,8 @@ namespace Macrosage.RabbitMQ.Server.Customer
             {
                 using (var model = connection.CreateModel())
                 {
-                    bool durable = true;
                     bool autoDeleteMessage = false;
-                    var queue = model.QueueDeclare(queueName, durable, false, false, null);
+                    var queue = model.QueueDeclare(queueName, RabbitMQConfig.IsDurable, false, false, null);
                    
                     //公平分发,不要同一时间给一个工作者发送多于一个消息
                     model.BasicQos(0, 1, false);
@@ -62,19 +65,40 @@ namespace Macrosage.RabbitMQ.Server.Customer
             }
         }
 
+        #endregion
 
+        #region 单线程消费消息
         public void ComsumeSingleThread(string queueName, Func<string, long, long, bool> fun)
         {
             Consume(queueName, fun);
         }
+        #endregion
 
+        #region 多线程消费消息
         public void ComsumeMulityThread(string queueName, Func<string, long, long, bool> fun)
         {
-            List<int> list = new List<int>() { 1, 2, 3 };//开三个线程
-            Parallel.ForEach(list, item =>
-            {
-                Consume(queueName, fun);
-            });
+            Parallel.For(0, RabbitMQConfig.ThreadCount, item =>
+             {
+                 Consume(queueName, fun);
+             });
         }
+        #endregion
+
+        #region 获取某个队列的未处理消息个数
+        public uint messageCount(string queueName)
+        {
+            var factory = RabbitMQFactory.Instance.CreateFactory();
+
+            using (var connection = factory.CreateConnection())
+            {
+                using (var model = connection.CreateModel())
+                {
+                    var queue = model.QueueDeclare(queueName, RabbitMQConfig.IsDurable, false, false, null);
+                    return queue.MessageCount; 
+                }
+            }
+        }
+        #endregion
+
     }
 }
