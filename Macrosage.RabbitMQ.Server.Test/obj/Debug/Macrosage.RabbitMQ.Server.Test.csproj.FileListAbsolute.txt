@@ -1,0 +1,9 @@
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\bin\Debug\Macrosage.RabbitMQ.Server.Test.exe.config
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\bin\Debug\Macrosage.RabbitMQ.Server.Test.exe
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\bin\Debug\Macrosage.RabbitMQ.Server.Test.pdb
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\bin\Debug\Macrosage.RabbitMQ.Server.dll
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\bin\Debug\RabbitMQ.Client.dll
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\bin\Debug\Macrosage.RabbitMQ.Server.pdb
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\obj\Debug\Macrosage.RabbitMQ.Server.Test.csprojResolveAssemblyReference.cache
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\obj\Debug\Macrosage.RabbitMQ.Server.Test.exe
+D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server.Test\obj\Debug\Macrosage.RabbitMQ.Server.Test.pdb
