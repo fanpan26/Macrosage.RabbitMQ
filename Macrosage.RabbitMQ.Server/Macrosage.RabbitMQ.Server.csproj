@@ -50,6 +50,7 @@
     <Compile Include="Customer\IMessageCustomer.cs" />
     <Compile Include="Customer\MessageCustomer.cs" />
     <Compile Include="ExceptionHandler.cs" />
+    <Compile Include="Logger\LogHelper.cs" />
     <Compile Include="Product\IMessageProduct.cs" />
     <Compile Include="Product\MessageProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

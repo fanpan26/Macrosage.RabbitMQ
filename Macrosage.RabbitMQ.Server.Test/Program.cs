@@ -12,7 +12,7 @@ namespace Macrosage.RabbitMQ.Server.Test
         static void Main(string[] args)
         {
             IMessageProduct product = new MessageProduct();
-            string queueName = "Macrosage.Queue.Test1";
+            string queueName = "test3";
 
             for (int i = 0; i < 500; i++)
             {

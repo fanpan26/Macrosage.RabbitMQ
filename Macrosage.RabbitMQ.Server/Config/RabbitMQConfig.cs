@@ -13,6 +13,49 @@ namespace Macrosage.RabbitMQ.Server.Config
         /// </summary>
         public const string PUBLISH_GLOBAL_QUEUE = "PUBLISH_GLOBAL_QUEUE";
 
+        /*
+          ExceptionHandler.ThrowArgumentNull("_hostName", RabbitMQConfig.HostName);
+                ExceptionHandler.ThrowArgumentNull("_userName", RabbitMQConfig.HostName);
+                ExceptionHandler.ThrowArgumentNull("_passWord", _passWord);
+
+            */
+        /// <summary>
+        /// 主机服务地址
+        /// </summary>
+        public static string HostName
+        {
+            get
+            {
+                var _hostName = "localhost";
+                ExceptionHandler.ThrowArgumentNull("_hostName", _hostName);
+                return _hostName;
+            }
+        }
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        public static string UserName
+        {
+            get
+            {
+                var _userName = "panzi";
+                ExceptionHandler.ThrowArgumentNull("_userName", _userName);
+                return _userName;
+            }
+        }
+        /// <summary>
+        /// 密码
+        /// </summary>
+        public static string PassWord
+        {
+            get
+            {
+                var _password = "panzi123";
+                ExceptionHandler.ThrowArgumentNull("_password", _password);
+                return _password;
+            }
+        }
+
         /// <summary>
         /// 是否持久化
         /// </summary>

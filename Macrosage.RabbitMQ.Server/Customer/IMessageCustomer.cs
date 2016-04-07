@@ -10,14 +10,8 @@ namespace Macrosage.RabbitMQ.Server.Customer
 {
     public interface IMessageCustomer
     {
-
-        uint messageCount(string queueName);
-        /// <summary>
-        /// 消费消息
-        /// </summary>
-        /// <param name="queueName"></param>
-        void Consume(string queueName, Func<string,long ,long,bool> fun);
-        void ComsumeSingleThread(string queueName, Func<string, long, long, bool> fun);
-        void ComsumeMulityThread(string queueName, Func<string, long, long, bool> fun);
+        Func<string, bool> ReceiveMessageCallback { get; set; }
+        uint MessageCount { get; }
+        void StartListening();
     }
 }

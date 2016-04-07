@@ -25,7 +25,7 @@ namespace Macrosage.RabbitMQ.Server.Product
                 {
                     //消息持久化，防止丢失
                     model.QueueDeclare(queueName, RabbitMQConfig.IsDurable, false, false, null);
-
+                   // model.ExchangeDeclare
                     //
                     var properties = model.CreateBasicProperties();
                     properties.SetPersistent(RabbitMQConfig.IsDurable);

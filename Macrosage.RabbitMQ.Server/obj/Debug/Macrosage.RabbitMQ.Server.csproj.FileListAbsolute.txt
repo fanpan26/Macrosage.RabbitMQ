@@ -4,4 +4,3 @@ D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server\bin\Debug\RabbitMQ.Clien
 D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server\bin\Debug\RabbitMQ.ServiceModel.dll
 D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server\obj\Debug\Macrosage.RabbitMQ.Server.dll
 D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server\obj\Debug\Macrosage.RabbitMQ.Server.pdb
-D:\Project\Macrosage.RabbitMQ\Macrosage.RabbitMQ.Server\obj\Debug\Macrosage.RabbitMQ.Server.csprojResolveAssemblyReference.cache
